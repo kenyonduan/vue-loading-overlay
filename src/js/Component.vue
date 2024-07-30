@@ -111,6 +111,8 @@ export default defineComponent({
         // Timeout for the animation complete before destroying
         setTimeout(() => {
           const parent = this.$el.parentElement;
+          if(!parent) return;
+          
           // unmount the component
           render(null, parent);
           removeElement(parent)
